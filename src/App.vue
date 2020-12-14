@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header title= 'Weather Checker'></Header>
+    <Weather></Weather>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import Weather from './components/Weather.vue'
+import Footer from './components/Footer.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Header,
+    Weather,
+    Footer
+  },
+  data(){
+    return{
+      weather: [
+        //
+      ]
+    };
+  },
+  // mounted(){
+  //   axios.get('api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid=8ccc67cbf2fc8f7352903633cb91e4fc')
+  //   .then((response) => {
+  //     this.weather = response.data.results;
+  //   });
+  // }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0%;
+  padding: 0%;
+}
+#app{
+  background: rgb(169, 169, 226);
 }
 </style>
